@@ -1,6 +1,6 @@
 # Detector de Fraudes
 
-Sistema de detecção de possíveis fraudes em transações bancárias.
+Sistema que identifica transações bancárias suspeitas utilizando Python, Apache Kafka e PostgreSQL. Tudo isso em tempo real!
 
 ## Tecnologias
 
@@ -25,6 +25,10 @@ Sistema de detecção de possíveis fraudes em transações bancárias.
 - `docker-compose.yml`: configura os serviços.
 - `requirements.txt`: lista as dependências Python.
 - `test_fraud_rules.py`: contém os testes das regras.
+
+## Funcionamento
+
+O produtor gera transações a cada 3 segundos e as envia ao Kafka. O consumidor recebe as mensagens, verifica as regras de fraude, exibe os resultados no terminal e armazena as transações no PostgreSQL.
 
 ## Como executar
 
@@ -85,5 +89,5 @@ Em outro terminal:
 python producer.py
 ```
 
-O produtor gera transações a cada 3 segundos. O consumidor processa as mensagens, verifica as regras de fraude e registra os resultados no banco de dados.
+
 
